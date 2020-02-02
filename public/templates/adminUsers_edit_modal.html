@@ -1,0 +1,46 @@
+<!-- My Work From Home Edit Modal -->
+<div class="modal fade" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">New Employee</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+
+        <form class="needs-validation" id="modalForm1" novalidate>
+            <div class="form-group">
+                <input type="text" class="form-control requestUsername" placeholder="username" required>
+            </div>
+            <div class="form-group">
+                <input type="text" class="form-control requestName" placeholder="name" required>
+            </div>
+            <div class="form-group">
+                <input type="email" class="form-control requestEmail" placeholder="email" required>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input requestIsAdmin" type="checkbox" value="" id="modal_check1">
+                <label class="form-check-label" for="modal_check1">
+                Is Admin
+                </label>
+            </div>
+            <div class="form-check isEnabledArea">
+                <input class="form-check-input requestIsEnabled" type="checkbox" value="" id="modal_check2">
+                <label class="form-check-label" for="modal_check2">
+                Account Enabled
+                </label>
+            </div>
+        </form>
+
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-warning cmdLicenses">Licenses</button>
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary cmdCreate">Create</button>
+        <button type="button" class="btn btn-primary cmdUpdate">Update</button>
+      </div>
+    </div>
+  </div>
+</div>   

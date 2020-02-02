@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <title></title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet" type="text/css" href="/css/bootstrap-4.3.1.min.css">
+    <link rel="stylesheet" type="text/css" href="/css/main.css">
+
+    <script type="text/javascript" src="/js/jquery-3.4.1.min.js"></script>
+    <script type="text/javascript" src="/js/bootstrap-4.3.1.min.js"></script>
+
+    <!--
+        Since no frameworks such as Vue or Angular where moentioned I ended up doing something quick. 
+    -->
+    <script type="text/javascript" src="/app/core.js"></script><!-- app core functionality -->
+    <script type="text/javascript" src="/app/template.js"></script><!-- loads and caches html template. -->
+    <script type="text/javascript" src="/app/navigation.js"></script><!-- handles nav bar functions -->
+    <script type="text/javascript" src="/app/http.js"></script><!-- provides ajax functionality -->
+
+    <script type="text/javascript" src="/app/api.security.js"></script><!-- apis needed for security -->
+    <script type="text/javascript" src="/app/api.user.workFromHome.js"></script><!-- apis for the regular user -->
+    <script type="text/javascript" src="/app/api.admin.users.js"></script><!--  -->
+    <script type="text/javascript" src="/app/api.admin.users.licences.js"></script><!--  -->
+    <script type="text/javascript" src="/app/api.admin.users.workFromHome.js"></script><!--  -->
+
+    <script type="text/javascript" src="/app/security.js"></script><!-- handles security aspects of the system. -->
+    <script type="text/javascript" src="/app/page.js"></script><!-- the page/modal manager. -->
+    <script type="text/javascript" src="/app/page.loader.js"></script><!-- the loading page -->
+    <script type="text/javascript" src="/app/page.login.js"></script><!-- the login page -->
+    <script type="text/javascript" src="/app/page.logout.js"></script><!-- the logout page -->
+
+    <script type="text/javascript" src="/app/page.userWorkFromHome.js"></script><!-- employee's list of work from homes requests page -->
+    <script type="text/javascript" src="/app/page.userWorkFromHome.modal_edit.js"></script><!-- cancel the logged in employee's work from homes request page -->
+    <script type="text/javascript" src="/app/page.userWorkFromHome.modal_new.js"></script><!-- create a new employee's work from homes request page -->
+
+    <script type="text/javascript" src="/app/page.adminUsersWorkFromHome.js"></script><!-- all employees list of work from homes requests page -->
+    <script type="text/javascript" src="/app/page.adminUsersWorkFromHome_modal_edit.js"></script><!-- reject/approve a work from homes request page -->
+
+    <script type="text/javascript" src="/app/page.adminUsers.js"></script><!-- list all users page -->
+    <script type="text/javascript" src="/app/page.adminUsers.modal_new.js"></script><!-- create a new employee page -->
+    <script type="text/javascript" src="/app/page.adminUsers.modal_edit.js"></script><!-- update an employee page -->
+    <script type="text/javascript" src="/app/page.adminUsersLicenses.modal.js"></script><!-- display and upate user licenses page -->
+    
+    <script type="text/javascript" src="/js/main.js"></script><!-- app initialization -->
+</head>
+<body>
+
+    <!-- navbar -->  
+    <nav class="navbar navbar-light navbar-expand-lg fixed-top ">  
+        <a class="navbar-brand" href="#">My Brand</a>
+
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">  
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        
+        <div class="collapse navbar-collapse " id="navbarSupportedContent">
+            <ul class="navbar-nav mr-4">
+                <li class="nav-item"> 
+                    <a class="nav-link" data-value="idAdminUsers" href="#">Employees</a>
+                </li>   
+                <li class="nav-item">  
+                    <a class="nav-link" data-value="idAdminWorkFromHome" href="#">All Work From Home</a>
+                </li>  
+                <li class="nav-item">  
+                    <a class="nav-link" data-value="idUserWorkFromHome" href="#">My Work From Home</a>
+                </li>  
+                <li class="nav-item"> 
+                    <a class="nav-link" data-value="idLogout" href="#">Logout</a>
+                </li> 
+            </ul> 
+        </div>
+    </nav>
+
+    <header class="header">
+        <div class="overlay"></div>
+        <div id="idPageContainer" class="container">
+
+            <div id="idLoading">
+                <div class="d-flex justify-content-center">
+                  <div class="spinner-border" style="width: 3rem; height: 3rem;" role="status">
+                    <span class="sr-only">Loading...</span>
+                  </div>
+                </div>                
+            </div>
+
+        </div>        
+    </header>
+
+    <div id="idModalContainer"></div>
+
+</body>
+</html>

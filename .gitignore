@@ -1,0 +1,4 @@
+/vendor
+/composer.lock
+runTests.bat
+.phpunit.result.cache

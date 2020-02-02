@@ -1,0 +1,123 @@
+.navbar{ 
+    background:#CC0000;
+}
+
+.nav-link , .navbar-brand{ 
+    color: #f4f4f4 !important; 
+    cursor: pointer;
+}
+
+.navbar-brand:hover {
+    color: #CC0000;   
+}
+
+.nav-link{ 
+    margin-right: 1em !important;
+}
+
+.nav-link:hover{ 
+    background: #f4f4f4; 
+    color: #CC0000 !important; 
+}
+
+.navbar-collapse{ 
+    justify-content: flex-end;
+}
+
+.navbar-toggler{  
+    background:#fff !important;
+}
+
+.bg-dark{
+    background-color:#343a40!important;
+}
+
+.bg-primary{
+    background-color:#007bff!important;
+}
+
+.btn-primary {
+    background-color: #CC0000!important;
+    border-color: #CC0000!important;
+}
+
+.form-control:focus {
+    border-color: #CC0000 !important;
+    box-shadow: 0 0 0 0.2rem rgba(204,0,0,.25);
+}
+
+.btn-primary.focus, .btn-primary:focus {
+    box-shadow: 0 0 0 0.2rem rgba(204,0,0,.25);
+}
+
+.btn-primary:not(:disabled):not(.disabled).active:focus, 
+.btn-primary:not(:disabled):not(.disabled):active:focus, 
+.show>.btn-primary.dropdown-toggle:focus {
+    box-shadow: 0 0 0 0.2rem rgba(204,0,0,.25);
+}
+
+.navbar a.nav-link {
+    display:none;
+}
+
+/*header style*/
+.header {
+    display: block;
+    background-image: url('/images/login-background.jpg');
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: center;
+}
+
+.overlay{
+    position: absolute;
+    min-height: 100%;
+    min-width: 100%;
+    left: 0;
+    top: 0;
+    background: rgba(244, 244, 244, 0.8);
+}
+
+
+/*
+ * LOADING PAGE
+ */
+
+#idLoading {
+    display:none;
+    color: #CC0000;
+    padding-top: 48%;
+}
+
+
+/*
+ * LOGIN FORM PAGE
+ */
+
+#idLogin {
+/*    display:none;*/
+    padding-top: 38%;
+}
+
+/*
+ * My Work From Home PAGE
+ */
+
+div.appPage {
+/*    display:none;*/
+    padding-top: 80px;
+}
+
+div.appPage h4 {
+    margin-bottom: 20px;
+}
+
+div.appPage h4 button {
+    font-size: 16px;
+    float:right;
+}
+
+ div.appPage h4 span {
+    font-size: 16px;
+    float:right;    
+ }

@@ -1,0 +1,9 @@
+{
+    "host": "", 
+    "requiresAuth": true,
+    "fromEmail": "", 
+    "username": "", 
+    "password": "", 
+    "encryption": "tls",
+    "port": 587
+}

@@ -299,6 +299,7 @@ cd /var/www/test-remote-work-app/
 When there is an issue the api will reply with one of these Status Code 400, 401, 405, 500 and the error object.
 
 The error object is a simple json object like the following
+```
 {
     "class": "...",
     "message": "...",
@@ -306,7 +307,7 @@ The error object is a simple json object like the following
     "file": "...",
     "line": ...
 }
-
+```
 
 ### System Setup
 
@@ -314,20 +315,25 @@ Request:
 GET /api/setup
 
 Response on success:
+```
 {
     "success": true
 }
+```
 
 ### Login
 
 Request:
 POST /api/login
+```
 {
     "username":"admin",
     "password":"123"
 }
+```
 
 Response on success:
+```
 {
     "success": true,
     "user": {
@@ -336,6 +342,7 @@ Response on success:
         "isAdmin": 1
     }
 }
+```
 
 Response on failure:
 {
@@ -348,9 +355,11 @@ Request:
 GET /api/logout
 
 Response on success:
+```
 {
     "success": true
 }
+```
 
 ### get Current Loggedin User
 
@@ -358,6 +367,7 @@ Request:
 GET /api/current-user
 
 Response on success:
+```
 {
     "success": true,
     "user": {
@@ -366,11 +376,14 @@ Response on success:
         "isAdmin": true
     }
 }
+```
 
 Response on failure:
+```
 {
     "success": false
 }
+```
 
 ### Employee's own Work from home requests
 
@@ -378,6 +391,7 @@ Request:
 GET /api/user/work-from-home
 
 Response on success:
+```
 {
     "success": true,
     "records": [
@@ -398,22 +412,27 @@ Response on success:
         }
     ]
 }
+```
 
 ### Employee create Work from home requests
 
 Request: 
 POST /api/user/work-from-home
+```
 {
     "date": "2020-02-05",
     "hours": 3,
     "comment": ""
 }
+```
 
 Response on success:
+```
 {
     "success": true,
     "insertId": 1
 }
+```
 
 ### Employee cancel Work from home requests
 
@@ -421,9 +440,11 @@ Request:
 PATCH /api/user/work-from-home/:requestId/cancel
 
 Response on success:
+```
 {
     "success": true
 }
+```
 
 ### Administrator all employees' Work from home requests 
 
@@ -431,35 +452,45 @@ Request:
 GET /api/users/work-from-home
 
 Response on success:
+```
 {
     "success": true
 }
+```
 
 ### Administrator rejecting an employee's Work from home request 
 
 Request:
 PATCH /api/users/work-from-home/:requestId/decline
+```
 {
     "comment": "..."
 }
+```
 
 Response on success:
+```
 {
     "success": true
 }
+```
 
 ### Administrator approves an employee's Work from home request
 
 Request:
 PATCH /api/users/work-from-home/:requestId/approve
+```
 {
     "comment": "..."
 }
+```
 
 Response on success:
+```
 {
     "success": true
 }
+```
 
 ### Administrator lists all employees
 
@@ -467,6 +498,7 @@ Request:
 GET /api/users
 
 Response on success:
+```
 {
     "success": true,
     "records": [
@@ -480,28 +512,34 @@ Response on success:
         }
     ]
 }
+```
 
 ### Administrator create a new employees
 
 Request:
 POST /api/users
+```
 {
     "username": "...",
     "name": "...",
     "email": "...",
     "isAdmin": ...
 }
+```
 
 Response on success:
+```
 {
     "success": true,
     "userId": 2
 }
+```
 
 ### Administrator update employees details
 
 Request:
 PUT /api/users/:userId
+```
 {
     "username": "...",
     "name": "...",
@@ -509,11 +547,14 @@ PUT /api/users/:userId
     "isAdmin": ...,
     "isEnabled": ...
 }
+```
 
 Response on success:
+```
 {
     "success": true
 }
+```
 
 ### Administrator lists an employee's licenses
 
@@ -521,6 +562,7 @@ Request:
 GET /api/users/:userId/licenses
 
 Response on success:
+```
 {
     "success": true,
     "records": [
@@ -546,6 +588,7 @@ Response on success:
         }
     ]
 }
+```
 
 ### Administrator updates the employee's licenses
 
@@ -553,6 +596,8 @@ Request:
 PUT /api/users/:userId/licenses
 
 Response on success:
+```
 {
     "success": true
 }
+```

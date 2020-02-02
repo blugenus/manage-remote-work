@@ -64,9 +64,9 @@ MariaDB [(none)]> exit;
 ```
 cd /var/www
 
-git clone https://github.com/blugenus/test-for-igaming-poker-parser.git
+git clone https://bitbucket.org/blugenus/test-remote-work-app.git
 
-cd \var\www\test-for-igaming-poker-parser\config\
+cd \var\www\test-remote-work-app\config\
 ```
 
 fill in the database configuration details we set before:
@@ -120,7 +120,7 @@ php -r "if (hash_file('SHA384', 'composer-setup.php') === '$HASH') { echo 'Insta
 
 sudo php composer-setup.php --install-dir=/usr/local/bin --filename=composer
 
-cd \var\www\test-for-igaming-poker-parser\
+cd \var\www\test-remote-work-app\
 
 sudo composer install
 
@@ -133,7 +133,7 @@ cd /etc/nginx/sites-available/
 
 sudo rm default
 
-sudo nano test-for-igaming-poker-parser
+sudo nano test-remote-work-app
 
 ```
 
@@ -143,7 +143,7 @@ Paste the following configuration
 server {
     listen       80;
 
-    root /var/www/test-for-igaming-poker-parser/public/;
+    root /var/www/test-remote-work-app/public/;
 
     index index.php;
 
@@ -169,7 +169,7 @@ cd /etc/nginx/sites-enabled/
 
 sudo rm default
 
-sudo ln -s /etc/nginx/sites-available/test-for-igaming-poker-parser /etc/nginx/sites-enabled/
+sudo ln -s /etc/nginx/sites-available/test-remote-work-app /etc/nginx/sites-enabled/
 
 sudo systemctl reload nginx
 

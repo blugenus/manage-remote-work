@@ -26,7 +26,7 @@ sudo apt upgrade
 ```
 
 ```
-sudo apt install nginx php-fpm php-mysql mariadb-server mariadb-client git -y
+sudo apt install nginx php-fpm php-mysql mariadb-server mariadb-client git php7.1-xml php-mbstring -y
 ```
 
 ### Database MySQL/MariaDB
@@ -66,7 +66,7 @@ cd /var/www
 
 git clone https://bitbucket.org/blugenus/test-remote-work-app.git
 
-cd \var\www\test-remote-work-app\config\
+cd /var/www/test-remote-work-app/config/
 ```
 
 fill in the database configuration details we set before:
@@ -87,7 +87,7 @@ sudo nano database.json
 }
 ```
 
-and fill in the smtp configuration details we set before:
+and fill in the smtp configuration details we set before (ps please use the setting of your smtp server:
 
 ```
 sudo cp smtp-sample.json smtp.json
@@ -109,6 +109,8 @@ sudo nano smtp.json
 
 ### Composer
 
+Install composer
+
 ```
 cd ~
 
@@ -119,8 +121,12 @@ HASH="$(wget -q -O - https://composer.github.io/installer.sig)"
 php -r "if (hash_file('SHA384', 'composer-setup.php') === '$HASH') { echo 'Installer verified'; } else { echo 'Installer corrupt'; unlink('composer-setup.php'); } echo PHP_EOL;"
 
 sudo php composer-setup.php --install-dir=/usr/local/bin --filename=composer
+```
 
-cd \var\www\test-remote-work-app\
+get dependencies
+
+```
+cd /var/www/test-remote-work-app/
 
 sudo composer install
 
@@ -148,11 +154,13 @@ server {
     index index.php;
 
     location / {
-        try_files $uri $uri/ /index.php?$query_string;
+        try_files $uri $uri/ /main.php?$query_string;
     }
 
     # PHP location:
     location ~ \.php$ {
+
+        root /var/www/test-remote-work-app/App/;
 
         fastcgi_pass unix:/run/php/php7.3-fpm.sock;
         fastcgi_index index.php;
@@ -281,7 +289,9 @@ Known Issues:
 
 ### Running PHPUnit tests
 ```
-TODO
+cd /var/www/test-remote-work-app/
+
+./vendor/bin/phpunit --bootstrap vendor/autoload.php tests
 ```
 
 ## API Quick Reference

@@ -594,6 +594,26 @@ Response on success:
 
 Request:
 PUT /api/users/:userId/licenses
+```
+[
+    {
+        "licenseId": 1,
+        "isTicked": 1
+    },
+    {
+        "licenseId": 2,
+        "isTicked": 0
+    },
+    {
+        "licenseId": 3,
+        "isTicked": 0
+    },
+    {
+        "licenseId": 4,
+        "isTicked": 0
+    }
+]
+```
 
 Response on success:
 ```

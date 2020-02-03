@@ -55,7 +55,7 @@ $dispatcher = \FastRoute\simpleDispatcher( function( \FastRoute\RouteCollector $
                 });                    
             });
         });
-
+        // employees access to create and cancel their own work from home requests
         $r->addGroup( '/user', function ( \FastRoute\RouteCollector $r ) {
             $r->addGroup( '/work-from-home', function ( \FastRoute\RouteCollector $r ) {
                 $r->addRoute( 'GET', '', App\Router::setRouteHandler( 'UserWorkFromHomeRequests', 'listAll' ) );

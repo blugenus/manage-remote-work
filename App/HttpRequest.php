@@ -23,7 +23,7 @@ class HttpRequest {
      * @return String
      */
     public function getMethod(){
-        return $_SERVER['REQUEST_METHOD'];
+        return $this->getServerVariables()['REQUEST_METHOD'];
     }
 
     /**
@@ -59,7 +59,7 @@ class HttpRequest {
      * @return void
      */
     private function processUri(){
-        $uri = $_SERVER['REQUEST_URI'];
+        $uri = $this->getServerVariables()['REQUEST_URI'];
         $uri = explode( '?', $uri )[0];
         $this->uri = rawurldecode($uri);    
     }
@@ -70,7 +70,7 @@ class HttpRequest {
      * @return void
      */
     private function processRequestBody(){
-        $tmp = file_get_contents("php://input");
+        $tmp = $this->getRawBody();
         $data = json_decode( $tmp, true );
         if( $data == null ){
             $data = [];  
@@ -78,4 +78,21 @@ class HttpRequest {
         $this->postData = $data;
     }
 
+    /**
+     * return the raw body oof the request
+     *
+     * @return String
+     */
+    public function getRawBody(){
+        return file_get_contents("php://input");
+    }
+
+    /**
+     * Returns the server variables
+     *
+     * @return Array
+     */
+    public function getServerVariables(){
+        return $_SERVER;
+    }
 }

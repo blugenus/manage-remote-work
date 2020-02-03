@@ -2,15 +2,13 @@
 namespace App;
 
 use App\Exceptions\ValidationException;
-/*
- * Base Model
- */
+
 abstract class Validate {
 
     /**
      * Will make sure that all the required keys are set in the array 
      * 
-     * @return void
+     * @return Boolean
      */
     public static function areSet( Array $array, Array $keys ){
         foreach( $keys as $key ){

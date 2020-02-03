@@ -40,7 +40,7 @@ class Database {
             );
             // Check connection
             if( self::$connection->connect_error ) {
-                throw new \ErrorException( "Connection failed: " . self::$connection->connect_error );
+                throw new \ErrorException( "Connection failed: " . self::$connection->connect_error, 500 );
             }
         }
     }

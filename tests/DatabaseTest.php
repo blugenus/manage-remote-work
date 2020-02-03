@@ -27,9 +27,11 @@ final class DatabaseTest extends TestCase {
         );
         // there should always be only 1 records
         $this->assertEquals( 1, sizeof( $result['records'] ) );
-        // the result cannot be less then 0 records;
+        // asserting integer binding
         $this->assertEquals( 111, $result['records'][0]['var1'] );
+        // asserting double binding
         $this->assertEquals( 222.333, $result['records'][0]['var2'] );
+        // asserting string binding
         $this->assertEquals( 'test444', $result['records'][0]['var3'] );
     }
 

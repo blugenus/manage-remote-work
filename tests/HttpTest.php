@@ -2,7 +2,7 @@
 
 use PHPUnit\Framework\TestCase;
 
-final class HttpRequestTest extends TestCase {
+final class HttpTest extends TestCase {
 
     public function testHttpRequest(){
         $mockedRequest = $this->getMockBuilder( 'App\HttpRequest' )
